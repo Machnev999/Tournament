@@ -1,22 +1,13 @@
 package ru.netology.domain;
 
 public class Player {
-    private int id;
-    private String name;
-    private int strength;
 
-    public Player(int id, String name, int strength) {
-        this.id = id;
+    protected String name;
+    protected Integer strength;
+
+    public Player(String name, Integer strength) {
         this.name = name;
         this.strength = strength;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -27,11 +18,11 @@ public class Player {
         this.name = name;
     }
 
-    public int getStrength() {
+    public Integer getStrength() {
         return strength;
     }
 
-    public void setStrength(int strength) {
+    public void setStrength(Integer strength) {
         this.strength = strength;
     }
 

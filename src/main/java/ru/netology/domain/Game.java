@@ -1,32 +1,27 @@
 package ru.netology.domain;
 
 
-import java.util.ArrayList;
+
+import java.util.HashMap;
 
 public class Game {
-    public Game() {
-        this.players = players;
-    }
-    protected ArrayList<Player> players = new ArrayList<>();
-
-    public ArrayList<Player> getPlayers() {
-        return players;
-    }
+    protected HashMap<String,Integer> map = new HashMap<>();
 
     public void register(Player player) { // регистрация пользователя
-        players.add(player);
+        map.put(player.getName(), player.getStrength());
     }
 
-    public int round(String PlayerName1, String PlayerName2) {
-        Player p1 = null;
-        Player p2 = null;
-        for (Player player : players) {
-            if (player.getName().equals(PlayerName1)) { // имя которое берем равно имени игрока
-            p1 = player;
-            }
-            if (player.getName().equals(PlayerName2)) {
-                p2 = player;
 
+    public int round(String PlayerName1, String PlayerName2) {
+        String p1 = null;
+        String p2 = null;
+        for (String key : map.keySet()) {
+
+            if (key.equals(PlayerName1)) { // имя которое берем равно имени игрока
+                p1 = key;
+            }
+            if (key.equals(PlayerName2)) {
+                p2 = key;
             }
         }
 
@@ -39,10 +34,10 @@ public class Game {
         }
 
 // правило игры. сравниваем силу
-        if (p1.getStrength() == p2.getStrength()) {
+        if (map.get(p1) == map.get(p2)) {
             return 0; // ничья
         }
-        if (p1.getStrength() > p2.getStrength()) {
+        if (map.get(p1) > map.get(p2)) {
             return 1; // выйграл 1 игрок
         } else {
             return 2; // выйграл 2 игрок

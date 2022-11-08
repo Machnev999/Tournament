@@ -12,9 +12,9 @@ public class GameTest {
 
     Game game = new Game();
 
-    Player player1 = new Player(1, "Batman", 200);
-    Player player2 = new Player(2, "Superman", 400);
-    Player player3 = new Player(3, "Ironman", 200);
+    Player player1 = new Player( "Batman", 20);
+    Player player2 = new Player( "Superman", 400);
+    Player player3 = new Player( "Ironman", 20);
 
 
     @BeforeEach
