@@ -43,22 +43,16 @@ public class GameTest {
 
     @Test
     public void shouldNoTRegisteredPlayerName1() {
-        Assertions.assertThrows(NotRegisteredException.class, () -> {
-            game.round("Halk", "IronMan");
-        });
+        Assertions.assertThrows(NotRegisteredException.class, () -> game.round("Halk", "IronMan"));
     }
 
     @Test
     public void shouldNoTRegisteredPlayerName2() {
-        Assertions.assertThrows(NotRegisteredException.class, () -> {
-            game.round("IronMan", "Halk");
-        });
+        Assertions.assertThrows(NotRegisteredException.class, () -> game.round("IronMan", "Halk"));
     }
     @Test
     public void shouldNoTRegisteredNoOne() {
-        Assertions.assertThrows(NotRegisteredException.class, () -> {
-            game.round("Grut", "Halk");
-        });
+        Assertions.assertThrows(NotRegisteredException.class, () -> game.round("Grut", "Halk"));
     }
 
 }

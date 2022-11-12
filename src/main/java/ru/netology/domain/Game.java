@@ -4,14 +4,9 @@ package ru.netology.domain;
 import java.util.ArrayList;
 
 public class Game {
-    public Game() {
-        this.players = players;
-    }
     protected ArrayList<Player> players = new ArrayList<>();
 
-    public ArrayList<Player> getPlayers() {
-        return players;
-    }
+
 
     public void register(Player player) { // регистрация пользователя
         players.add(player);
@@ -29,7 +24,6 @@ public class Game {
 
             }
         }
-
 // если имя не зарег ( null )  - выдаем ошибку
         if (p1 == null) {
             throw new NotRegisteredException( PlayerName1 + " is not registered");
