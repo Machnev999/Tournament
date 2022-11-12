@@ -34,7 +34,7 @@ public class Game {
         }
 
 // правило игры. сравниваем силу
-        if (map.get(p1) == map.get(p2)) {
+        if (map.get(p1).equals(map.get(p2))) {
             return 0; // ничья
         }
         if (map.get(p1) > map.get(p2)) {
