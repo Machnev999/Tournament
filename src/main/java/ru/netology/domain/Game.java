@@ -7,7 +7,6 @@ public class Game {
     protected ArrayList<Player> players = new ArrayList<>();
 
 
-
     public void register(Player player) { // регистрация пользователя
         players.add(player);
     }
@@ -17,7 +16,7 @@ public class Game {
         Player p2 = null;
         for (Player player : players) {
             if (player.getName().equals(PlayerName1)) { // имя которое берем равно имени игрока
-            p1 = player;
+                p1 = player;
             }
             if (player.getName().equals(PlayerName2)) {
                 p2 = player;
@@ -26,7 +25,7 @@ public class Game {
         }
 // если имя не зарег ( null )  - выдаем ошибку
         if (p1 == null) {
-            throw new NotRegisteredException( PlayerName1 + " is not registered");
+            throw new NotRegisteredException(PlayerName1 + " is not registered");
         }
         if (p2 == null) {
             throw new NotRegisteredException(PlayerName2 + " is not registered");
@@ -43,6 +42,5 @@ public class Game {
 
         }
     }
-
 
 }

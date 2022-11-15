@@ -6,7 +6,6 @@ import ru.netology.domain.NotRegisteredException;
 import ru.netology.domain.Player;
 
 
-
 public class GameTest {
 
 
@@ -43,16 +42,17 @@ public class GameTest {
 
     @Test
     public void shouldNoTRegisteredPlayerName1() {
-        Assertions.assertThrows(NotRegisteredException.class, () -> game.round("Halk", "IronMan"));
+        Assertions.assertThrows(NotRegisteredException.class, () -> game.round("Hulk", "IronMan"));
     }
 
     @Test
     public void shouldNoTRegisteredPlayerName2() {
-        Assertions.assertThrows(NotRegisteredException.class, () -> game.round("IronMan", "Halk"));
+        Assertions.assertThrows(NotRegisteredException.class, () -> game.round("IronMan", "Hulk"));
     }
+
     @Test
     public void shouldNoTRegisteredNoOne() {
-        Assertions.assertThrows(NotRegisteredException.class, () -> game.round("Grut", "Halk"));
+        Assertions.assertThrows(NotRegisteredException.class, () -> game.round("SpyderMan", "Hulk"));
     }
 
 }
